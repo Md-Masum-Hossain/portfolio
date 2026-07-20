@@ -107,6 +107,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - The project uses custom motion wrappers and animated background elements, so the UI is intentionally modular.
 - Project data lives outside the components, which keeps the showcase easy to update without editing layout code.
 - The contact form posts to an internal API route, so no client-side mail service configuration is required beyond the Resend API key.
+- Developer-focused implementation details live in [docs/DEVELOPER.md](docs/DEVELOPER.md).
 
 ## License
 
