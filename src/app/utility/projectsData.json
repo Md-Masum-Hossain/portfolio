@@ -141,7 +141,7 @@
     {
         "id": 9,
         "titel": "Docvexa",
-        "desc": "Docvexa is a SaaS-based healthcare platform built with the MERN stack to simplify doctor appointment management for patients, doctors, and administrators. Patients can search for doctors, book appointments, make secure online payments through SSLCommerz, and interact with an AI-powered health assistant for general health guidance and doctor recommendations based on their symptoms. Doctors can manage appointments, track earnings, and update consultation status, while administrators oversee users, doctors, appointments, payments, and overall platform activities through a dedicated dashboard. The application is designed with a clean and responsive user interface, secure JWT authentication, role-based access control, and scalable architecture following modern industry best practices.",
+        "desc": "A SaaS-based healthcare platform that helps patients book doctor appointments, make secure online payments, and receive AI-powered health guidance. Doctors and administrators can efficiently manage appointments, earnings, and platform operations.",
         "src": "/projectImages/docvexa.png",
         "category": "Full Stack",
         "tags": [
@@ -159,6 +159,7 @@
         "frontend": "https://github.com/Md-Masum-Hossain/Doctor-Appointment-SaaS.git",
         "backend": "https://github.com/Md-Masum-Hossain/Doctor-Appointment-SaaS.git",
         "liveView": "https://docvexa.vercel.app/",
-        "status": "In Progress"
+        "status": "In Progress",
+        "overview": "Docvexa is a SaaS-based healthcare platform built with the MERN stack to simplify doctor appointment management for patients, doctors, and administrators. Patients can search for doctors, book appointments, make secure online payments through SSLCommerz, and interact with an AI-powered health assistant for general health guidance and doctor recommendations based on their symptoms. Doctors can manage appointments, track earnings, and update consultation status, while administrators oversee users, doctors, appointments, payments, and overall platform activities through a dedicated dashboard. The application is designed with a clean and responsive user interface, secure JWT authentication, role-based access control, and scalable architecture following modern industry best practices."
     }
 ]
