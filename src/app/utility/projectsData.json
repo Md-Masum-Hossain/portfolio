@@ -5,7 +5,13 @@
         "desc": "Dorpon is a full-stack e-commerce platform that delivers a smooth shopping experience with product discovery, streamlined checkout, and reliable order management for both users and administrators.",
         "src": "/projectImages/dorpon.png",
         "category": "Full Stack",
-        "tags": ["Next.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+        "tags": [
+            "Next.js",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Tailwind CSS"
+        ],
         "frontend": "https://github.com/Md-Masum-Hossain/dorponFrontend.git",
         "backend": "https://github.com/Md-Masum-Hossain/dorponBackend.git",
         "liveView": "https://dorpon-frontend.vercel.app/",
@@ -17,7 +23,16 @@
         "desc": "Product Hunt is a community-driven platform for discovering and launching tech products, featuring secure authentication, product publishing workflows, voting and review systems, and analytics for administrative insights.",
         "src": "/projectImages/producthunt.png",
         "category": "Full Stack",
-        "tags": ["React", "Tailwind CSS", "Framer Motion", "Chart.js", "Node.js", "Express.js", "MongoDB", "JWT"],
+        "tags": [
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Chart.js",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "JWT"
+        ],
         "frontend": "https://github.com/Md-Masum-Hossain/product-hunt-client.git",
         "backend": "https://github.com/Md-Masum-Hossain/product-hunt-server.git",
         "liveView": "https://product-hunt-client-blue.vercel.app/",
@@ -29,7 +44,13 @@
         "desc": "Routine Scrapper helps university students automatically collect and organize class schedules from official sources, offering a clean interface to browse routines, reduce manual effort, and stay consistently updated.",
         "src": "/projectImages/routine.png",
         "category": "Full Stack",
-        "tags": ["React", "Redux", "Node.js", "Express.js", "MongoDB"],
+        "tags": [
+            "React",
+            "Redux",
+            "Node.js",
+            "Express.js",
+            "MongoDB"
+        ],
         "frontend": "https://github.com/Md-Masum-Hossain/routine_scrapper.git",
         "backend": "https://github.com/Md-Masum-Hossain/routineScrapperBackend.git",
         "liveView": "https://routinescrapper.vercel.app/",
@@ -41,7 +62,11 @@
         "desc": "A modern personal portfolio designed to present projects, technical skills, and professional strengths through responsive design, performance-focused pages, and clear communication of value.",
         "src": "/projectImages/portfolio.png",
         "category": "Frontend",
-        "tags": ["Next.js", "Tailwind CSS", "Framer Motion"],
+        "tags": [
+            "Next.js",
+            "Tailwind CSS",
+            "Framer Motion"
+        ],
         "frontend": "https://github.com/Md-Masum-Hossain/portfolio.git",
         "liveView": "https://portfolio-iota-brown-27.vercel.app/",
         "status": "Completed"
@@ -52,7 +77,11 @@
         "desc": "A healthcare booking interface that helps patients discover doctors, check availability, and schedule appointments through a simple, responsive, and user-friendly workflow.",
         "src": "/projectImages/doctors.png",
         "category": "Frontend",
-        "tags": ["React", "Tailwind CSS", "Redux"],
+        "tags": [
+            "React",
+            "Tailwind CSS",
+            "Redux"
+        ],
         "frontend": "https://github.com/Md-Masum-Hossain/doctor_apoinment.git",
         "backend": "#",
         "liveView": "https://doctor-apoinment-psi.vercel.app/",
@@ -64,23 +93,72 @@
         "desc": "CPCCU is a production community platform that connects students, professionals, and organizations through member profiles, event coordination, discussion spaces, and shared resources. The source code remains private due to active organizational use.",
         "src": "/projectImages/cpccu.png",
         "category": "Full Stack",
-        "tags": ["Next.js", "Node.js", "Cloudinary", "Express.js", "MongoDB"],
+        "tags": [
+            "Next.js",
+            "Node.js",
+            "Cloudinary",
+            "Express.js",
+            "MongoDB"
+        ],
         "frontend": "#",
         "backend": "#",
         "liveView": "https://www.cpccu.club/",
         "status": "In Progress"
     },
-    
-     {
+    {
         "id": 7,
         "titel": "Simple Portfolio Website",
         "desc": "A lightweight portfolio website built with core web technologies to showcase projects and skills with fast loading, straightforward navigation, and a clean presentation.",
         "src": "/projectImages/simple_portfolio.png",
         "category": "Frontend",
-        "tags": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Bootstrap"
+        ],
         "frontend": "https://github.com/Md-Masum-Hossain/simple_portfolio.git",
         "backend": "#",
         "liveView": "https://md-masum-hossain.github.io/simple_portfolio/",
         "status": "Completed"
+    },
+    {
+        "id": 8,
+        "titel": "StudyNook",
+        "desc": "A study management application that helps students organize their learning materials, track progress, and collaborate with peers through a user-friendly interface.",
+        "src": "/projectImages/studynook.png",
+        "category": "Frontend",
+        "tags": [
+            "React",
+            "Tailwind CSS",
+            "OpenWeatherMap API"
+        ],
+        "frontend": "https://github.com/Md-Masum-Hossain/weather-app.git",
+        "backend": "#",
+        "liveView": "https://md-masum-hossain.github.io/weather-app/",
+        "status": "Completed"
+    },
+    {
+        "id": 9,
+        "titel": "Docvexa",
+        "desc": "Docvexa is a SaaS-based healthcare platform built with the MERN stack to simplify doctor appointment management for patients, doctors, and administrators. Patients can search for doctors, book appointments, make secure online payments through SSLCommerz, and interact with an AI-powered health assistant for general health guidance and doctor recommendations based on their symptoms. Doctors can manage appointments, track earnings, and update consultation status, while administrators oversee users, doctors, appointments, payments, and overall platform activities through a dedicated dashboard. The application is designed with a clean and responsive user interface, secure JWT authentication, role-based access control, and scalable architecture following modern industry best practices.",
+        "src": "/projectImages/docvexa.png",
+        "category": "Full Stack",
+        "tags": [
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Zustand",
+            "JWT",
+            "Gemini AI",
+            "SSLCommerz",
+            "Cloudinary",
+            "Tailwind CSS"
+        ],
+        "frontend": "https://github.com/Md-Masum-Hossain/Doctor-Appointment-SaaS.git",
+        "backend": "https://github.com/Md-Masum-Hossain/Doctor-Appointment-SaaS.git",
+        "liveView": "https://docvexa.vercel.app/",
+        "status": "In Progress"
     }
 ]
