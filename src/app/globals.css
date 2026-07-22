@@ -45,31 +45,31 @@
 
 @layer base {
   :root {
-    --background: #F7F8FA;
-    --foreground: #0b1220;
+    --background: #F6F7F9;
+    --foreground: #061025;
     --card: #ffffff;
-    --border: rgba(11, 18, 32, 0.06);
-    --primary: hsl(195 58% 51%);
-    --primary-gradient: linear-gradient(135deg, hsl(195 62% 60%), hsl(255 34% 62%));
-    --primary-foreground: hsl(220 18% 6%);
-    --muted-foreground: #8b97a3;
-    --gradient-primary: linear-gradient(135deg, hsl(195 58% 51%), hsl(250 32% 60%));
-    --gradient-accent: linear-gradient(135deg, hsl(250 32% 60%), hsl(330 28% 58%));
-    --gradient-glow: linear-gradient(135deg, hsl(195 58% 51% / 0.12), hsl(250 32% 60% / 0.12));
+    --border: rgba(11, 18, 32, 0.05);
+    --primary: hsl(195 52% 47%);
+    --primary-gradient: linear-gradient(135deg, hsl(195 54% 54%), hsl(235 28% 56%));
+    --primary-foreground: hsl(220 20% 5%);
+    --muted-foreground: #8a97a2;
+    --gradient-primary: linear-gradient(135deg, hsl(195 52% 47%), hsl(240 30% 56%));
+    --gradient-accent: linear-gradient(135deg, hsl(240 30% 56%), hsl(330 24% 54%));
+    --gradient-glow: linear-gradient(135deg, hsl(195 52% 47% / 0.10), hsl(240 30% 56% / 0.10));
   }
 
   .dark {
     --background: #0b1118;
     --foreground: #e6eef8;
     --card: #0f1622;
-    --primary: hsl(195 60% 62%);
+    --primary: hsl(195 55% 60%);
     --primary-foreground: #e8f3ea;
-    --border: rgba(255, 255, 255, 0.06);
-    --muted-foreground: #93a3b5;
-    --primary-gradient: linear-gradient(135deg, hsl(195 62% 62%), hsl(255 32% 64%));
-    --gradient-primary: linear-gradient(135deg, hsl(195 60% 62%), hsl(250 32% 60%));
-    --gradient-accent: linear-gradient(135deg, hsl(250 32% 60%), hsl(330 28% 58%));
-    --gradient-glow: linear-gradient(135deg, hsl(195 60% 62% / 0.12), hsl(250 32% 60% / 0.12));
+    --border: rgba(255, 255, 255, 0.04);
+    --muted-foreground: #8e9fb0;
+    --primary-gradient: linear-gradient(135deg, hsl(195 56% 62%), hsl(235 28% 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(195 55% 60%), hsl(240 30% 56%));
+    --gradient-accent: linear-gradient(135deg, hsl(240 30% 56%), hsl(330 24% 54%));
+    --gradient-glow: linear-gradient(135deg, hsl(195 55% 60% / 0.10), hsl(240 30% 56% / 0.10));
   }
 }
 
@@ -105,17 +105,84 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Typographic scale and vertical rhythm */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.0vw, 1.75rem);
+}
+
+h3 {
+  font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+  font-weight: 600;
+}
+
+h4 { font-size: 1rem; font-weight: 600; }
+h5 { font-size: 0.95rem; font-weight: 600; }
+h6 { font-size: 0.9rem; font-weight: 600; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.125rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+small, .label, label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+/* Links inherit color; underline only on hover for minimalism */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Global vertical rhythm: small, non-invasive spacing between major blocks */
+main > * + * {
+  margin-top: clamp(1.25rem, 2.2vw, 2.5rem);
+}
+
+/* Ensure readable measure inside prose blocks */
+.prose h1, .prose h2, .prose h3 { margin-top: 0; }
+
+/* Tighten heading -> paragraph spacing slightly for a confident rhythm */
+h1 + p, h2 + p, h3 + p { margin-top: 0.25rem; }
+
 .btn-primary {
-    @apply px-6 py-3 rounded-xl font-semibold text-primary-foreground transition-all duration-300;
+    @apply px-6 py-3 rounded-xl font-semibold text-primary-foreground;
     background: linear-gradient(135deg, hsl(187 100% 50%), hsl(263 70% 58%));
+    transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms ease, background-color 220ms ease;
+    will-change: transform, box-shadow;
   }
 
   .btn-primary:hover {
-    @apply scale-105;
-    box-shadow: 0 0 30px hsl(187 100% 50% / 0.5);
+    transform: translateY(-3px);
+    /* softer, subtle shadow — no neon glow */
+    box-shadow: 0 10px 30px rgba(2,6,23,0.12), 0 2px 6px rgba(2,6,23,0.06);
   }
 
   .glass-card {
@@ -134,12 +201,26 @@ body {
   }
 
   .btn-outline {
-    @apply px-6 py-3 rounded-xl font-semibold border-2 border-primary text-primary transition-all duration-300 bg-transparent;
+    @apply px-6 py-3 rounded-xl font-semibold text-primary bg-transparent;
+    @apply transition;
+    /* reduce border dominance while keeping brand color intent */
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(11,18,32,0.08);
+    background-color: transparent;
+    transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  }
+
+  .dark .btn-outline {
+    /* lighter border in dark mode */
+    border-color: rgba(255,255,255,0.06);
   }
 
   .btn-outline:hover {
-    @apply bg-primary/10 scale-105;
-    box-shadow: 0 0 20px hsl(187 100% 50% / 0.3);
+    transform: translateY(-2px);
+    /* subtle translucent fill using brand tint (keeps transparent look) */
+    background-color: rgba(32,138,199,0.06);
+    box-shadow: 0 8px 20px rgba(2,6,23,0.08);
   }
 
    .gradient-text {
@@ -158,4 +239,46 @@ body {
 
   .neon-glow-purple {
     box-shadow: 0 0 20px hsl(263 70% 58% / 0.4), 0 0 40px hsl(263 70% 58% / 0.2);
+  }
+
+  /* Layout refinement: global container and readable measure
+     - Keeps hero/content/footer relationship balanced
+     - Wider but restrained max-widths for desktop
+     - Preserves readable line-lengths for long-form text
+  */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .container {
+      max-width: 1400px;
+    }
+  }
+
+  /* Reading measure: keep long paragraphs comfortable */
+  .prose {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Slight spacing relationship tweak between header/content/footer
+     (non-invasive: only affects global flow if components rely on container)
+  */
+  main {
+    display: block;
   }
