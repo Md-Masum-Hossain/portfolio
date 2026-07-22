@@ -72,7 +72,7 @@ This site is organized like a modern developer portfolio rather than a generic l
 ### Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Md-Masum-Hossain/portfolio.git
 cd portfolio
 npm install
 ```

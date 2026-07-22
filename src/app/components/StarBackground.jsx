@@ -11,7 +11,7 @@ export const Star = () => {
     const [loaded, setLoaded] = useState(false);
 
     const generateStars = () => {
-        const numberOfStars = Math.floor((window.innerWidth * window.innerHeight) / 3000);
+        const numberOfStars = Math.floor((window.innerWidth * window.innerHeight) / 5000);
         const newStars = [];
         for (let i = 0; i < numberOfStars; i++) {
             newStars.push({
