@@ -493,12 +493,16 @@
         "overview": "Docvexa is a SaaS-based healthcare platform built with the MERN stack to simplify doctor appointment management for patients, doctors, and administrators. Patients can search for doctors, book appointments, make secure online payments through SSLCommerz, and interact with an AI-powered assistant for general health guidance and specialist recommendations. Doctors can manage appointments, track earnings, and update consultation status, while administrators oversee users, doctors, appointments, payments, and overall platform activity through a dedicated dashboard. The application is designed with a clean responsive interface, secure JWT authentication, role-based access control, and a structure that can support future product growth without requiring major redesigns.",
         "storyGallery": [
             {
-                "src": "#",
-                "alt": "AI Health Assistant"
+                "src": "/projectImages/docvexa_AI_assistant.png",
+                "alt": "AI Health Assistant",
+                "title": "AI Assistant",
+                "description": "Patients can describe symptoms in natural language and get a guided response that keeps the appointment flow moving without feeling clinical or heavy."
             },
             {
-                "src": "#",
-                "alt": "Doctor Dashboard"
+                "src": "/projectImages/docvexa_dashboard.png",
+                "alt": "Doctor Dashboard",
+                "title": "Doctor Dashboard",
+                "description": "A focused control center for managing appointments, patient context, and daily workflow so the operational side stays organized at a glance."
             }
         ],
         "keyFeatures": [

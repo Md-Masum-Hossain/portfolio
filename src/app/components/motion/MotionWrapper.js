@@ -7,6 +7,7 @@ import { leftRightPalse } from "./variants/leftRightPalse";
 import { infinityCarousel } from "./variants/infinityCarousel";
 import { bottomVariant } from "./variants/bottom";
 import { rotateClockwise, rotateAntiClockwise } from "./variants/roundMotion";
+import { projectPreviewVariant } from "./variants/projectPreview";
 
 
 const animations = {
@@ -17,6 +18,7 @@ const animations = {
     leftRightPalse,
     infinityCarousel, 
     bottom: bottomVariant,
+    projectPreview: projectPreviewVariant,
     rotateClockwise,
     rotateAntiClockwise,
 };
