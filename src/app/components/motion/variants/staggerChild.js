@@ -1,29 +1,29 @@
 export const LeftStaggerChild = {
-    hidden: {
-        x: -100,
-        opacity: 0
+  hidden: {
+    y: 16,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
     },
-    visible: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.5,
-            ease: "easeInOut"
-        },
-    },
+  },
 };
 
 export const RightStaggerChild = {
-    hidden: {
-        x: 100,
-        opacity: 0
+  hidden: {
+    y: 16,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
     },
-    visible: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.5,
-            ease: "easeInOut"
-        },
-    },
+  },
 };

@@ -1,26 +1,34 @@
 'use client'
-import React from 'react'
-import { useState } from 'react'
-
+import React, { useState } from 'react'
 
 function ProjectCategory({ categories, onCategoryChange }) {
-    const [selectedCategory, setSelectedCategory] = useState('All');
-    const handleCategoryClick = (category) => {
-        setSelectedCategory(category);
-        onCategoryChange(category);
-    }
-    return (
-        <div className='flex gap-4 mt-10 justify-center width-full flex-wrap'>
-            {categories.map((category, index) => (
-                <button key={index} onClick={() => {
-                    handleCategoryClick(category);
-                }} className={`${selectedCategory === category ? 'btn-primary' : 'btn-outline'} !rounded-3xl !font-light !border flex items-center h-13
-                  transition-colors duration-300`}>
-                    <h3 className="text-sm">{category}</h3>
-                </button>
-            ))}
-        </div>
-    )
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    onCategoryChange(category);
+  };
+
+  return (
+    <div className='flex gap-2.5 my-8 justify-center w-full flex-wrap'>
+      {categories.map((category) => {
+        const isSelected = selectedCategory === category;
+        return (
+          <button
+            key={category}
+            onClick={() => handleCategoryClick(category)}
+            className={`px-4 py-2 rounded-lg text-xs md:text-sm font-mono tracking-wide transition-all duration-200 cursor-pointer ${
+              isSelected
+                ? 'btn-primary shadow-lg shadow-accent/15'
+                : 'btn-outline border border-subtle bg-surface text-secondary hover:text-primary hover:border-accent/40'
+            }`}
+          >
+            {category}
+          </button>
+        );
+      })}
+    </div>
+  );
 }
 
-export default ProjectCategory
+export default ProjectCategory;

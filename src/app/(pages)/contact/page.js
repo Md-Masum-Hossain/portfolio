@@ -1,26 +1,39 @@
 import React from 'react'
-import { MdOutlineAttachEmail } from "react-icons/md";
-import ContactFrom from '../../components/ContactFrom';
-import ContactAddress from '../../components/ContactAddress';
+import ContactFrom from '@/app/components/ContactFrom';
+import ContactAddress from '@/app/components/ContactAddress';
+import { Mail } from 'lucide-react';
 
-function Contract() {
-  return (
-    <>
-      <div className='flex gap-2 neon-glow-purple border border-cyan-200 w-40 mx-auto mb-7 p-2 rounded-full opacity-60 text-cyan-400 text-center justify-center items-center backdrop-blur-md'><MdOutlineAttachEmail className='text-amber-50' /> Let&apos;s Connect</div>
-      <h2 className=' text-5xl font-semi-bold text-center'>Get In <span className='gradient-text'>Touch</span></h2>
-      <p className='text-center text-muted-foreground mt-5'>Have a project in mind or just want to chat? I&apos;d love to hear from you!</p>
-      <div className='mt-10'>
-        <section className='grid md:grid-cols-3 gap-4 md:mx-10'>
-        <div>
-          <ContactAddress />
-        </div>
-        <div className='md:col-span-2'>
-          <ContactFrom /> 
-        </div>
-      </section>
-      </div>
-    </>
-  )
+export const metadata = {
+  title: 'Contact | Masum Hossain',
+  description: 'Initiate contact with Masum Hossain for full-stack software engineering, SaaS product development, and technical consulting.',
 }
 
-export default Contract;
+function ContactPage() {
+  return (
+    <div className="w-[95%] max-w-6xl mx-auto py-10 md:py-16">
+      <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="inline-flex items-center gap-2 mb-3 px-3.5 py-1.5 rounded-full border border-subtle bg-surface text-secondary text-xs font-mono uppercase tracking-wider">
+          <Mail className="w-3.5 h-3.5 text-accent" />
+          <span>Get In Touch</span>
+        </div>
+        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary mb-4">
+          Initiate <span className="gradient-text">Collaboration</span>
+        </h1>
+        <p className="text-secondary text-sm md:text-base leading-relaxed">
+          Have an upcoming product, scalable architecture requirement, or engineering role? Send a direct message or connect through professional networks.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <div className="lg:col-span-5">
+          <ContactAddress />
+        </div>
+        <div className="lg:col-span-7">
+          <ContactFrom />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ContactPage;

@@ -1,8 +1,8 @@
-import React from 'react'
-import Image from 'next/image'
-import { IoEyeOutline } from "react-icons/io5";
+import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { Github, ExternalLink} from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 const createSlug = (value = '') =>
   value
@@ -10,63 +10,117 @@ const createSlug = (value = '') =>
     .trim()
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
+    .replace(/-+/g, '-');
 
-const truncateText = (text = '', maxLength = 120) => {
-  if (text.length <= maxLength) return text
-  return `${text.slice(0, maxLength).trim()}...`
-}
-
-function ProjectCard({ src, titel, desc, link, githubLink, liveLink, category, status }) {
-  const detailHref = link && link !== '#' ? link : `/projects/${createSlug(titel)}`
-  const shortDesc = truncateText(desc, 130)
-
-  return (
-    <div className='relative group'>
-      <Link href={detailHref}>
-      <div className="glass-card glass-card-hover w-[98%] md:w-lg h-100 p-8 md:p-10 border border-border rounded-md mx-auto mt-10 shadow-foreground/20 shadow-lg backdrop-blur-sm flex flex-col items-center gap-4 text-center">
-        <div className='absolute top-1 left-1 gradient-text font-mono text-[12px] border border-cyan-200 rounded-2xl px-2 py-1'>{category}</div>
-        <div className='absolute top-1 right-1 gradient-text font-mono text-[12px] border border-cyan-200 rounded-2xl px-2 py-1'>{status}</div>
-        <Image width={500} height={300} src={src} alt={titel} className="max-w-full h-25 md:h-50 rounded-md object-cover" />
-        <h3 className="text-2xl text-foreground leading-tight">{titel}</h3>
-        <p className="text-muted-foreground leading-relaxed min-h-12">{shortDesc}</p>
-        <div className='glass-card glass-card-hover cursor-pointer opacity-0 bg-primary/40 backdrop-blur-md w-full h-full rounded-md absolute top-0 flex flex-col justify-center items-center left-0 hover:opacity-100'>
-          <IoEyeOutline size={50} className=" text-primary-foreground opacity-70" />
-          <h3 className='text-primary-foreground opacity-70'>View Details</h3>
-        </div>
-      </div>
-    </Link>
-    <div className='absolute opacity-0 group-hover:opacity-100 flex top-10 right-20 gap-4 z-100'>
-      <Link href={liveLink || "#"} target="_blank" rel="noopener noreferrer">
-        <ExternalLink className='!rounded-full !w-12 !p-2 !h-12 btn-primary !text-black' />
-      </Link>
-      <Link href={githubLink || "#"} target="_blank" rel="noopener noreferrer">
-        <Github className='!rounded-full !w-12 !p-2 !h-12 btn-primary !text-black' />
-      </Link>
-    </div>
-
-    </div>
-  )
-}
-
-export default ProjectCard
-
-
-export const Card = ({ src, titel, desc, link }) => {
-  const detailHref = link && link !== '#' ? link : `/projects/${createSlug(titel)}`
-  const shortDesc = truncateText(desc, 90)
+function ProjectCard({
+  src,
+  titel,
+  desc,
+  link,
+  githubLink,
+  liveLink,
+  category,
+  status = 'Completed',
+  tags = [],
+}) {
+  const slug = createSlug(titel);
+  const detailHref = link && link !== '#' ? link : `/projects/${slug}`;
 
   return (
-    <Link href={detailHref}>
-      <div className="glass-card glass-card-hover w-70 h-80 p-2 border border-border rounded-md mx-auto mt-10 shadow-foreground/20 shadow-lg backdrop-blur-sm flex flex-col items-center gap-4">
-        <Image width={300} height={100} src={src} alt={titel} />
-        <h3 className="text-2xl text-foreground">{titel}</h3>
-        <p className="text-muted-foreground text-center leading-relaxed">{shortDesc}</p>
-        <div className='glass-card glass-card-hover cursor-pointer opacity-0 bg-primary/60 backdrop-blur-md w-full h-full rounded-md absolute top-0 flex flex-col justify-center items-center left-0 hover:opacity-100'>
-          <IoEyeOutline size={50} className=" text-primary-foreground opacity-70" />
-          <h3 className='text-primary-foreground opacity-70'>View Details</h3>
+    <div className="rounded-lg border border-subtle bg-surface flex flex-col justify-between overflow-hidden shadow-xl transition-all duration-300 hover:border-accent/40 group h-full">
+      {/* Top Image Preview Frame */}
+      <div>
+        <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-subtle bg-base">
+          <Image
+            src={src}
+            alt={titel}
+            fill
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+          <div className="absolute top-3 left-3 flex items-center gap-2">
+            <span className="px-2.5 py-1 rounded-md border border-subtle bg-base/90 backdrop-blur-md text-[11px] font-mono text-secondary uppercase tracking-wider">
+              {category}
+            </span>
+          </div>
+          <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-subtle bg-base/90 backdrop-blur-md text-[11px] font-mono text-status">
+            <span className="w-1.5 h-1.5 rounded-full bg-status animate-pulse" />
+            <span>{status}</span>
+          </div>
+        </div>
+
+        {/* Content Body */}
+        <div className="p-6">
+          <Link href={detailHref} className="group-hover:text-accent transition-colors">
+            <h3 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-2 line-clamp-1">
+              {titel}
+            </h3>
+          </Link>
+          <p className="text-sm text-secondary leading-relaxed mb-5 line-clamp-3">
+            {desc}
+          </p>
+
+          {/* Tech Stack Tags */}
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-6">
+              {tags.slice(0, 5).map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2 py-0.5 rounded-md border border-subtle bg-base text-[11px] font-mono text-secondary"
+                >
+                  {tag}
+                </span>
+              ))}
+              {tags.length > 5 && (
+                <span className="px-1.5 py-0.5 text-[11px] font-mono text-secondary/60">
+                  +{tags.length - 5}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
-    </Link>
-  )
+
+      {/* Direct Action Links Bar on Every Card */}
+      <div className="px-6 pb-6 pt-2 border-t border-subtle flex items-center justify-between gap-3 mt-auto">
+        <div className="flex items-center gap-2">
+          {liveLink && liveLink !== '#' && (
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Live Demo of ${titel}`}
+              className="btn-primary text-xs px-3.5 py-1.5 inline-flex items-center gap-1.5"
+            >
+              <span>Live Demo</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+          {githubLink && githubLink !== '#' && (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`GitHub Repository for ${titel}`}
+              className="btn-outline text-xs px-3.5 py-1.5 inline-flex items-center gap-1.5"
+            >
+              <FaGithub className="w-3 h-3" />
+              <span>GitHub</span>
+            </a>
+          )}
+        </div>
+
+        <Link
+          href={detailHref}
+          className="text-xs font-mono uppercase tracking-wider text-secondary hover:text-primary transition-colors inline-flex items-center gap-1"
+        >
+          <span>Details</span>
+          <ArrowRight className="w-3 h-3" />
+        </Link>
+      </div>
+    </div>
+  );
 }
+
+export default ProjectCard;
+
+export const Card = ProjectCard;

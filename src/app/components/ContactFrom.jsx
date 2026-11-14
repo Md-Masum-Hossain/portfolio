@@ -1,80 +1,163 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import { useState } from 'react';
-import { MotionWrapper } from './motion/MotionWrapper';
+import { Send, Loader2 } from 'lucide-react'
+import { MotionWrapper } from './motion/MotionWrapper'
 
 function ContactFrom() {
-    const [isloading, setIsLoading] = useState(false);
-    const HandleSubmite = async (e) => {
-        e.preventDefault();
-        setIsLoading(true);
-        const form = e.target;
-        try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: form.name.value,
-                    email: form.email.value,
-                    subject: form.subject.value,
-                    message: form.message.value,
-                }),
-            });
-            if (res.ok) {
-                setIsLoading(false);
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Sended Successfully!",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                form.reset();
-            } else {
-                alert("Something went wrong");
-            }
-        } catch (error) {
-            console.error("Error submitting form:", error);
-        }
+  const [isloading, setIsLoading] = useState(false);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    const form = e.target;
 
-    };
-    let d;
-    for (let i = 1; i < 5; i++) {
-        d =i;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name.value,
+          email: form.email.value,
+          subject: form.subject.value,
+          message: form.message.value,
+        }),
+      });
+
+      if (res.ok) {
+        setIsLoading(false);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Message Transmitted Successfully",
+          text: "Thank you for reaching out. I will respond to your inquiry promptly.",
+          showConfirmButton: false,
+          timer: 2000,
+          background: "#141417",
+          color: "#F4F4F5",
+        });
+        form.reset();
+      } else {
+        setIsLoading(false);
+        Swal.fire({
+          icon: "error",
+          title: "Transmission Failed",
+          text: "Something went wrong while delivering the message. Please try again or email directly.",
+          background: "#141417",
+          color: "#F4F4F5",
+        });
+      }
+    } catch (error) {
+      setIsLoading(false);
+      console.error("Error submitting form:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "Please verify your connection or email directly.",
+        background: "#141417",
+        color: "#F4F4F5",
+      });
     }
-    return (
-        <MotionWrapper type='right'>
-        <div className=' neon-glow-purple p-10 border border-cyan-200 rounded-3xl bg-blue-50 backdrop-blur-sm'>
-            <h4 className='text-black'>Send Me a Message</h4>
-            <form onSubmit={HandleSubmite}>
-                <div className="flex flex-col gap-4 mt-5 ">
-                    <div className="flex flex-col md:flex-row gap-4">
-                        <MotionWrapper type='right' delay={d * 0.2} className="flex flex-col flex-1 gap-1">
-                            <label htmlFor="name" className='text-black '>Your Name <span className='text-red-500'>*</span></label>
-                            <input type="text" name='name' placeholder="Masum Hossain" autoComplete='name' required className="text-black flex-1 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300" />
-                        </MotionWrapper>
-                        <MotionWrapper type='right' delay={d * 0.2} className="flex flex-col flex-1 gap-1">
-                            <label htmlFor="email" className='text-black '>Your Email <span className='text-red-500'>*</span></label>
-                            <input type="email" name='email' placeholder="masum@example.com" autoComplete='email' required className="text-black flex-1 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300" />
-                        </MotionWrapper>
-                    </div>
-                    <MotionWrapper type='right' delay={d * 0.2} className="flex flex-col flex-1 gap-1">
-                        <label htmlFor="subject" className='text-black '>Subject <span className='text-red-500'>*</span></label>
-                        <input type="text" name='subject' placeholder="How can I help you?" required className="text-black w-full p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300" />
-                    </MotionWrapper>
-                    <MotionWrapper type='right' delay={d * 0.2} className="flex flex-col flex-1 gap-1">
-                        <label htmlFor="message" className='text-black '>Your Message <span className='text-red-500'>*</span></label>
-                        <textarea rows="5" name='message' placeholder="Tell me about your project or say Hi!" required className="text-black w-full p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300"></textarea>
-                    </MotionWrapper>
-                    <button type="submit" className={`btn-primary ${isloading ? 'opacity-50 cursor-not-allowed' : ''} neon-glow px-6 py-3 rounded-md hover:bg-secondary hover:text-primary transition-colors duration-300 w-full`}>{isloading ? 'Sending...' : 'Send Message'}</button>
-                </div>
-            </form>
+  };
 
-        </div>
-        </MotionWrapper>
-    )
+  return (
+    <MotionWrapper type="right" delay={0.15}>
+      <div className="p-6 md:p-8 rounded-lg border border-subtle bg-surface shadow-2xl">
+        <h3 className="text-xl md:text-2xl font-bold tracking-tight text-primary mb-1">
+          Send a Message
+        </h3>
+        <p className="text-xs font-mono uppercase tracking-wider text-secondary mb-6">
+          Direct communication channel for contracts and collaborations
+        </p>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label htmlFor="name" className="text-xs font-mono uppercase tracking-wider text-secondary flex items-center justify-between">
+                <span>Your Name</span>
+                <span className="text-accent">*</span>
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Alex Morgan"
+                autoComplete="name"
+                required
+                className="w-full p-3 rounded-md border border-subtle bg-base text-primary placeholder:text-secondary/40 focus:border-accent focus:outline-none transition-colors text-sm"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <label htmlFor="email" className="text-xs font-mono uppercase tracking-wider text-secondary flex items-center justify-between">
+                <span>Email Address</span>
+                <span className="text-accent">*</span>
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="alex@company.com"
+                autoComplete="email"
+                required
+                className="w-full p-3 rounded-md border border-subtle bg-base text-primary placeholder:text-secondary/40 focus:border-accent focus:outline-none transition-colors text-sm"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="subject" className="text-xs font-mono uppercase tracking-wider text-secondary flex items-center justify-between">
+              <span>Subject</span>
+              <span className="text-accent">*</span>
+            </label>
+            <input
+              id="subject"
+              type="text"
+              name="subject"
+              placeholder="Full-Stack Application Development Inquiry"
+              required
+              className="w-full p-3 rounded-md border border-subtle bg-base text-primary placeholder:text-secondary/40 focus:border-accent focus:outline-none transition-colors text-sm"
+            />
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="message" className="text-xs font-mono uppercase tracking-wider text-secondary flex items-center justify-between">
+              <span>Message</span>
+              <span className="text-accent">*</span>
+            </label>
+            <textarea
+              id="message"
+              rows="5"
+              name="message"
+              placeholder="Outline project specifications, engineering challenges, timeline, or scope..."
+              required
+              className="w-full p-3 rounded-md border border-subtle bg-base text-primary placeholder:text-secondary/40 focus:border-accent focus:outline-none transition-colors text-sm resize-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={isloading}
+            className={`btn-primary w-full py-3.5 rounded-lg font-semibold inline-flex items-center justify-center gap-2 transition-all duration-200 ${
+              isloading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:brightness-105'
+            }`}
+          >
+            {isloading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span>Transmitting...</span>
+              </>
+            ) : (
+              <>
+                <span>Send Message</span>
+                <Send className="w-4 h-4" />
+              </>
+            )}
+          </button>
+        </form>
+      </div>
+    </MotionWrapper>
+  );
 }
 
-export default ContactFrom
+export default ContactFrom;

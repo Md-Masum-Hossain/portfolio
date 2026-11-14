@@ -1,34 +1,35 @@
-import { delay } from "framer-motion";
-
 export const rightColumn = {
-    hidden: { 
-        x: 100, 
-        opacity: 0 
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: (d = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: d,
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
     },
-    visible: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.6,
-            staggerChildren: 0.2,
-            delayChildren: 0.1,
-        },
-    },
+  }),
 };
 
 export const leftColumn = {
-    hidden: {
-        x: -100,
-        opacity: 0
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: (d = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: d,
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
     },
-    visible: (d) => ({ 
-        x: 0, 
-        opacity: 1, 
-        transition: {
-             duration: 0.6,
-             delay: d,
-             staggerChildren: 0.2,
-             delayChildren: 0.1,
-            } 
-        }),
+  }),
 };

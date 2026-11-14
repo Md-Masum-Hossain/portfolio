@@ -1,15 +1,15 @@
 export const bottomVariant = {
   hidden: {
     opacity: 0,
-    y: 80,
-    },
-    visible: (d) => ({
+    y: 16,
+  },
+  visible: (d = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-        delay: d,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      delay: d,
     },
   }),
-}
+};
