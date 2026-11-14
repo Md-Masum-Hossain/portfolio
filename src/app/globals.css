@@ -21,6 +21,18 @@
   --font-mono: var(--font-geist-mono);
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-meteor: meteor 5s linear infinite;
+  --animate-marquee-left: marquee-left 38s linear infinite;
+  --animate-marquee-right: marquee-right 38s linear infinite;
+
+  @keyframes marquee-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+  }
 
   @keyframes pulse-subtle {
     0%,
@@ -138,6 +150,14 @@
 
 @utility border-accent {
   border-color: var(--accent-primary);
+}
+
+@utility animate-marquee-left {
+  animation: marquee-left 38s linear infinite;
+}
+
+@utility animate-marquee-right {
+  animation: marquee-right 38s linear infinite;
 }
 
 @utility hero-grid {

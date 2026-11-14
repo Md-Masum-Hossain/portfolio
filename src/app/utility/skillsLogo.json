@@ -1,186 +1,156 @@
 [
-    {
-        "id": 1,
-        "name": "HTML",
-        "percent": 90,
-        "category": "Frontend",
-        "src": "/assets/html.svg",
-        "disc": "For structuring web content"
-    },
-    {
-        "id": 2,
-        "name": "CSS",
-        "percent": 85,
-        "category": "Frontend",
-        "src": "/assets/css.svg",
-        "disc": "For styling web pages"
-    },
-    {
-        "id": 3,
-        "name": "JavaScript",
-        "percent": 80,
-        "category": "Frontend",
-        "src": "/assets/javascript.svg",
-        "disc": "For adding interactivity to web pages"
-    },
-    {
-        "id": 4,
-        "name": "React",
-        "percent": 75,
-        "category": "Frontend",
-        "src": "/assets/react.svg",
-        "disc": "For building user interfaces"
-    },
-    {
-        "id": 5,
-        "name": "Node.js",
-        "percent": 70,
-        "category": "Backend",
-        "src": "/assets/nodejs.svg",
-        "disc": "For server-side development"
-    },
-    {
-        "id": 6,
-        "name": "Next.js",
-        "percent": 80,
-        "category": "Frontend",
-        "src": "/assets/nextjs.svg",
-        "disc": "For server-side rendering and static site generation"
-    },
-    {
-        "id": 7,
-        "name": "MongoDB",
-        "percent": 70,
-        "category": "Backend",
-        "src": "/assets/mongodb.svg",
-        "disc": "For NoSQL database management"
-    },
-    {
-        "id": 8,
-        "name": "Git",
-        "percent": 85,
-        "category": "Tool",
-        "src": "/assets/git.svg",
-        "disc": "For version control"
-    },
-    {
-        "id": 9,
-        "name": "GitHub",
-        "percent": 85,
-        "category": "Tool",
-        "src": "/assets/github.svg",
-        "disc": "For code hosting and collaboration"
-    },
-    {
-        "id": 10,
-        "name": "Tailwind CSS",
-        "percent": 80,
-        "category": "Frontend",
-        "src": "/assets/tailwind.svg",
-        "disc": "For utility-first CSS framework"
-    },
-    {
-        "id": 11,
-        "name": "Figma",
-        "percent": 70,
-        "category": "Tool",
-        "src": "/assets/figma.svg",
-        "disc": "For UI/UX design"
-    },
-    {
-        "id": 12,
-        "name": "Express.js",
-        "percent": 70,
-        "category": "Backend",
-        "src": "/assets/expressjs.svg",
-        "disc": "For web application framework for Node.js"
-    },
-    {
-        "id": 13,
-        "name": "SCSS",
-        "percent": 75,
-        "category": "Frontend",
-        "src": "/assets/scss.svg",
-        "disc": "For advanced CSS styling"
-    },
-    {
-        "id": 14,
-        "name": "Sass",
-        "percent": 75,
-        "category": "Frontend",
-        "src": "/assets/sass.svg",
-        "disc": "For CSS pre-processing"
-    },
-    {
-        "id": 15,
-        "name": "NPM",
-        "percent": 80,
-        "category": "Tool",
-        "src": "/assets/npm.svg",
-        "disc": "For package management"
-    },
-    {
-        "id": 16,
-        "name": "Yarn",
-        "percent": 70,
-        "category": "Tool",
-        "src": "/assets/yarn.svg",
-        "disc": "For fast, reliable, and secure dependency management"
-    },
-    {
-        "id": 17,
-        "name": "VS Code",
-        "percent": 90,
-        "category": "Tool",
-        "src": "/assets/vscode.svg",
-        "disc": "For code editing and development"
-    },
-    {
-        "id": 18,
-        "name": "MySQL",
-        "percent": 65,
-        "category": "Backend",
-        "src": "/assets/mysql.svg",
-        "disc": "For relational database management"
-    },
-    {
-        "id": 19,
-        "name": "Postman",
-        "percent": 75,
-        "category": "Tool",
-        "src": "/assets/postman.svg",
-        "disc": "For API testing and development"
-    },
-    {
-        "id": 20,
-        "name": "Firebase",
-        "percent": 70,
-        "category": "Backend",
-        "src": "/assets/firebase.svg",
-        "disc": "For backend-as-a-service and real-time database"
-    },
-    {
-        "id": 21,
-        "name": "Vercel",
-        "percent": 75,
-        "category": "Tool",
-        "src": "/assets/vercel.svg",
-        "disc": "For frontend deployment and hosting"
-    },
-    {
-        "id": 22,
-        "name": "Render",
-        "percent": 70,
-        "category": "Tool",
-        "src": "/assets/render.svg",
-        "disc": "For full-stack application hosting"
-    },
-    {
-        "id": 23,
-        "name": "Vite",
-        "percent": 80,
-        "category": "Tool",
-        "src": "/assets/vite.svg",
-        "disc": "For fast frontend build tool"
-    }
+  {
+    "id": 1,
+    "name": "HTML",
+    "category": "Frontend",
+    "src": "/assets/html.svg",
+    "disc": "Semantic document structure and accessible web markup"
+  },
+  {
+    "id": 2,
+    "name": "CSS",
+    "category": "Frontend",
+    "src": "/assets/css.svg",
+    "disc": "Modern responsive styling and layout systems"
+  },
+  {
+    "id": 3,
+    "name": "JavaScript",
+    "category": "Frontend",
+    "src": "/assets/javascript.svg",
+    "disc": "ES6+ asynchronous programming and DOM manipulation"
+  },
+  {
+    "id": 4,
+    "name": "React",
+    "category": "Frontend",
+    "src": "/assets/react.svg",
+    "disc": "Declarative UI engineering with hooks and component lifecycle"
+  },
+  {
+    "id": 5,
+    "name": "Node.js",
+    "category": "Backend",
+    "src": "/assets/nodejs.svg",
+    "disc": "Event-driven asynchronous server-side runtime"
+  },
+  {
+    "id": 6,
+    "name": "Next.js",
+    "category": "Frontend",
+    "src": "/assets/nextjs.svg",
+    "disc": "Full-stack React framework with SSR, SSG, and App Router"
+  },
+  {
+    "id": 7,
+    "name": "MongoDB",
+    "category": "Backend",
+    "src": "/assets/mongodb.svg",
+    "disc": "Document-based NoSQL database modeling and aggregations"
+  },
+  {
+    "id": 8,
+    "name": "Git",
+    "category": "Tool",
+    "src": "/assets/git.svg",
+    "disc": "Distributed version control and branching workflows"
+  },
+  {
+    "id": 9,
+    "name": "GitHub",
+    "category": "Tool",
+    "src": "/assets/github.svg",
+    "disc": "CI/CD automation, pull requests, and repository hosting"
+  },
+  {
+    "id": 10,
+    "name": "Tailwind CSS",
+    "category": "Frontend",
+    "src": "/assets/tailwind.svg",
+    "disc": "Utility-first design system with atomic CSS generation"
+  },
+  {
+    "id": 11,
+    "name": "Figma",
+    "category": "Tool",
+    "src": "/assets/figma.svg",
+    "disc": "Collaborative UI/UX wireframing and interactive prototypes"
+  },
+  {
+    "id": 12,
+    "name": "Express.js",
+    "category": "Backend",
+    "src": "/assets/expressjs.svg",
+    "disc": "REST API routing, middleware chaining, and HTTP services"
+  },
+  {
+    "id": 13,
+    "name": "Sass / SCSS",
+    "category": "Frontend",
+    "src": "/assets/sass.svg",
+    "disc": "Nested CSS pre-processing, mixins, and design tokens"
+  },
+  {
+    "id": 14,
+    "name": "NPM",
+    "category": "Tool",
+    "src": "/assets/npm.svg",
+    "disc": "Package registry management and workspace scripts"
+  },
+  {
+    "id": 15,
+    "name": "Yarn",
+    "category": "Tool",
+    "src": "/assets/yarn.svg",
+    "disc": "Deterministic dependency resolution and package caching"
+  },
+  {
+    "id": 16,
+    "name": "VS Code",
+    "category": "Tool",
+    "src": "/assets/vscode.svg",
+    "disc": "Primary IDE environment with debugging and linting toolchains"
+  },
+  {
+    "id": 17,
+    "name": "MySQL",
+    "category": "Backend",
+    "src": "/assets/mysql.svg",
+    "disc": "Relational schema design, normalization, and ACID transactions"
+  },
+  {
+    "id": 18,
+    "name": "Postman",
+    "category": "Tool",
+    "src": "/assets/postman.svg",
+    "disc": "API contract validation, integration testing, and mock servers"
+  },
+  {
+    "id": 19,
+    "name": "Firebase",
+    "category": "Backend",
+    "src": "/assets/firebase.svg",
+    "disc": "Authentication, Firestore realtime sync, and cloud functions"
+  },
+  {
+    "id": 20,
+    "name": "Vercel",
+    "category": "Tool",
+    "src": "/assets/vercel.svg",
+    "disc": "Edge network serverless deployment and preview builds"
+  },
+  {
+    "id": 21,
+    "name": "Render",
+    "category": "Tool",
+    "src": "/assets/render.svg",
+    "disc": "Cloud hosting for Docker containers, web services, and databases"
+  },
+  {
+    "id": 22,
+    "name": "Vite",
+    "category": "Tool",
+    "src": "/assets/vite.svg",
+    "disc": "Next-generation frontend tooling with instant HMR and Rollup builds"
+  }
 ]
