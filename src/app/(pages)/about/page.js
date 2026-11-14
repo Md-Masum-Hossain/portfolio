@@ -2,37 +2,44 @@ import React from 'react'
 import Image from 'next/image'
 import { BriefcaseBusiness, Rocket, Code2, Layers, Workflow, CheckCircle2 } from 'lucide-react'
 
+export const dynamic = 'force-static';
+
+export const metadata = {
+  title: 'About | Masum Hossain',
+  description: 'About Masum Hossain - Full-Stack & AI/SaaS Software Engineer building modern web products with clean architecture and scalable code.',
+}
+
 function About() {
   const strengths = [
     {
-      title: 'Product-Focused Development',
-      desc: 'I turn ideas into real, usable products with clear structure and practical business value.',
+      title: 'Product-Focused Engineering',
+      desc: 'I transform product requirements into robust, production-grade applications with clean domain modeling and measurable business value.',
       icon: Rocket,
     },
     {
-      title: 'Modern Full-Stack Skills',
-      desc: 'I build responsive frontends and reliable backends using modern tools and scalable patterns.',
+      title: 'Full-Stack Architecture',
+      desc: 'I architect reactive, accessible frontends and high-throughput backend services using Next.js, Node.js, and cloud datastores.',
       icon: Code2,
     },
     {
-      title: 'Clean Architecture',
-      desc: 'I write maintainable code with reusable components, strong naming, and performance-aware decisions.',
+      title: 'Maintainable Systems',
+      desc: 'I write clean, modular, and testable code with strict separation of concerns, strong naming conventions, and performance optimization.',
       icon: Layers,
     },
   ]
 
   const process = [
     {
-      title: 'Discover & Plan',
-      desc: 'I clarify goals, user needs, and project scope before writing production code.',
+      title: '1. Discover & Specify',
+      desc: 'Clarify domain requirements, system boundaries, and user flows before committing production code.',
     },
     {
-      title: 'Build & Iterate',
-      desc: 'I develop features in clean modules with responsive UI and backend integration.',
+      title: '2. Build & Integrate',
+      desc: 'Develop clean, reusable modules with comprehensive error handling, type safety, and responsive UI.',
     },
     {
-      title: 'Optimize & Launch',
-      desc: 'I polish performance, fix edge cases, and prepare stable deployment-ready builds.',
+      title: '3. Optimize & Scale',
+      desc: 'Profile performance, eliminate bottlenecks, and ensure deployment stability across target platforms.',
     },
   ]
 
@@ -42,95 +49,96 @@ function About() {
     'Node.js',
     'Express.js',
     'MongoDB',
+    'PostgreSQL',
     'Tailwind CSS',
-    'Framer Motion',
     'REST APIs',
+    'Cloud Architecture',
   ]
 
   return (
-    <section className='w-[95%] mx-auto mt-10'>
-      <div className='border border-border rounded-2xl p-6 md:p-10 shadow-foreground/20 shadow-lg backdrop-blur-sm bg-background/40'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center'>
+    <section className='w-[95%] max-w-6xl mx-auto py-10 md:py-16'>
+      <div className='border border-subtle rounded-lg p-6 md:p-12 bg-surface shadow-2xl'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center'>
           <div className='order-2 lg:order-1'>
-            <div className='inline-flex items-center gap-2 neon-glow-purple border border-cyan-200 px-4 py-2 rounded-full opacity-80 text-cyan-400 backdrop-blur-md mb-5'>
-              <BriefcaseBusiness className='w-4 h-4 text-amber-50' />
-              <span>About Me</span>
+            <div className='inline-flex items-center gap-2 border border-subtle bg-base px-3.5 py-1.5 rounded-full text-secondary text-xs font-mono uppercase tracking-wider mb-5'>
+              <BriefcaseBusiness className='w-3.5 h-3.5 text-accent' />
+              <span className='text-primary'>About Me</span>
             </div>
 
-            <h1 className='text-3xl md:text-5xl font-bold mb-5'>
-              Building Modern Web Products with <span className='gradient-text'>Purpose</span>
+            <h1 className='text-3xl md:text-5xl font-bold tracking-tight text-primary mb-5'>
+              Engineering Web Platforms with <span className='gradient-text'>Precision</span>
             </h1>
 
-            <p className='text-lg text-secondary leading-relaxed max-w-2xl mb-7'>
-              I am Masum Hossain, a full-stack web developer focused on creating fast, reliable, and user-centered digital products. I enjoy solving real problems through clean architecture, thoughtful UI decisions, and maintainable code that scales with growth.
+            <p className='text-base md:text-lg text-secondary leading-relaxed max-w-xl mb-7'>
+              I am Masum Hossain, a Full-Stack & AI/SaaS Software Engineer specializing in fast, resilient, and user-centered digital products. I solve complex challenges through clean modular code, dependable backend architecture, and thoughtful UI design.
             </p>
 
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8'>
-              <div className='rounded-xl border border-border bg-card/40 p-4 text-center'>
-                <h3 className='text-2xl font-bold gradient-text'>20+</h3>
-                <p className='text-sm text-muted-foreground'>Technologies Used</p>
+              <div className='rounded-lg border border-subtle bg-base p-4 text-center'>
+                <h3 className='text-2xl font-bold text-accent'>20+</h3>
+                <p className='text-xs font-mono uppercase tracking-wider text-secondary mt-1'>Technologies</p>
               </div>
-              <div className='rounded-xl border border-border bg-card/40 p-4 text-center'>
-                <h3 className='text-2xl font-bold gradient-text'>7+</h3>
-                <p className='text-sm text-muted-foreground'>Project Demos</p>
+              <div className='rounded-lg border border-subtle bg-base p-4 text-center'>
+                <h3 className='text-2xl font-bold text-accent'>7+</h3>
+                <p className='text-xs font-mono uppercase tracking-wider text-secondary mt-1'>Shipped Demos</p>
               </div>
-              <div className='rounded-xl border border-border bg-card/40 p-4 text-center'>
-                <h3 className='text-2xl font-bold gradient-text'>100%</h3>
-                <p className='text-sm text-muted-foreground'>Quality Focus</p>
+              <div className='rounded-lg border border-subtle bg-base p-4 text-center'>
+                <h3 className='text-2xl font-bold text-accent'>100%</h3>
+                <p className='text-xs font-mono uppercase tracking-wider text-secondary mt-1'>Production Ready</p>
               </div>
             </div>
 
             <a href='/contact'>
-              <button className='btn-primary'>Let\'s Work Together</button>
+              <button className='btn-primary'>Let&apos;s Work Together</button>
             </a>
           </div>
 
           <div className='order-1 lg:order-2'>
-            <div className='rounded-2xl overflow-hidden border border-border/60 shadow-md shadow-foreground/10 bg-muted/20 p-2'>
+            <div className='rounded-lg overflow-hidden border border-subtle bg-base p-2'>
               <Image
                 src='/masum.png'
                 alt='Masum Hossain portrait'
                 width={900}
                 height={1100}
-                className='w-full h-auto rounded-xl object-cover'
+                className='w-full h-auto rounded-md object-cover'
                 priority={false}
               />
             </div>
           </div>
         </div>
 
-        <div className='mt-10 grid grid-cols-1 md:grid-cols-3 gap-4'>
+        <div className='mt-12 grid grid-cols-1 md:grid-cols-3 gap-5'>
           {strengths.map((item) => {
             const Icon = item.icon
             return (
               <article
                 key={item.title}
-                className='rounded-xl border border-border bg-card/40 p-5 shadow-foreground/10 shadow-sm'
+                className='rounded-lg border border-subtle bg-base p-6'
               >
-                <Icon className='w-5 h-5 text-primary mb-3' />
+                <Icon className='w-5 h-5 text-accent mb-3' />
                 <h2 className='text-lg font-semibold mb-2 text-primary'>{item.title}</h2>
-                <p className='text-secondary leading-relaxed'>{item.desc}</p>
+                <p className='text-sm text-secondary leading-relaxed'>{item.desc}</p>
               </article>
             )
           })}
         </div>
 
-        <div className='mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5'>
-          <article className='rounded-xl border border-border bg-card/40 p-6 shadow-foreground/10 shadow-sm'>
-            <h2 className='text-2xl font-semibold text-primary mb-3'>Professional Overview</h2>
-            <p className='text-secondary leading-relaxed mb-4'>
-              I specialize in creating modern web applications that balance UI quality, performance, and maintainability. My focus is on delivering real, usable solutions that help businesses move faster and serve users better.
+        <div className='mt-8 grid grid-cols-1 lg:grid-cols-2 gap-5'>
+          <article className='rounded-lg border border-subtle bg-base p-6'>
+            <h2 className='text-xl font-semibold text-primary mb-3'>Professional Overview</h2>
+            <p className='text-sm text-secondary leading-relaxed mb-4'>
+              I specialize in engineering modern web applications that unite UI quality with backend resilience. My focus is on delivering maintainable systems that scale seamlessly under production workloads.
             </p>
-            <p className='text-secondary leading-relaxed'>
-              From portfolio websites to full-stack products, I enjoy building end-to-end systems with clean architecture and thoughtful details.
+            <p className='text-sm text-secondary leading-relaxed'>
+              From high-conversion SaaS interfaces to distributed RESTful architectures, I bring rigorous technical discipline and clean design to every build.
             </p>
           </article>
 
-          <article className='rounded-xl border border-border bg-card/40 p-6 shadow-foreground/10 shadow-sm'>
-            <h2 className='text-2xl font-semibold text-primary mb-4'>Current Focus Areas</h2>
+          <article className='rounded-lg border border-subtle bg-base p-6'>
+            <h2 className='text-xl font-semibold text-primary mb-4'>Current Focus Areas</h2>
             <div className='flex flex-wrap gap-2'>
               {techFocus.map((tech) => (
-                <span key={tech} className='px-3 py-1 rounded-full border border-border bg-background/70 text-sm text-secondary'>
+                <span key={tech} className='px-3 py-1 rounded-md border border-subtle bg-surface text-xs font-mono text-secondary'>
                   {tech}
                 </span>
               ))}
@@ -138,29 +146,29 @@ function About() {
           </article>
         </div>
 
-        <div className='mt-10 rounded-xl border border-border bg-card/40 p-6 shadow-foreground/10 shadow-sm'>
+        <div className='mt-8 rounded-lg border border-subtle bg-base p-6'>
           <div className='flex items-center gap-2 mb-5'>
-            <Workflow className='w-5 h-5 text-primary' />
-            <h2 className='text-2xl font-semibold text-primary'>How I Work</h2>
+            <Workflow className='w-5 h-5 text-accent' />
+            <h2 className='text-xl font-semibold text-primary'>Engineering Workflow</h2>
           </div>
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
             {process.map((item) => (
-              <article key={item.title} className='rounded-lg border border-border bg-background/60 p-4'>
+              <article key={item.title} className='rounded-lg border border-subtle bg-surface p-4'>
                 <div className='flex items-center gap-2 mb-2'>
-                  <CheckCircle2 className='w-4 h-4 text-primary' />
-                  <h3 className='font-semibold text-primary'>{item.title}</h3>
+                  <CheckCircle2 className='w-4 h-4 text-accent' />
+                  <h3 className='font-semibold text-primary text-sm'>{item.title}</h3>
                 </div>
-                <p className='text-secondary leading-relaxed'>{item.desc}</p>
+                <p className='text-xs text-secondary leading-relaxed'>{item.desc}</p>
               </article>
             ))}
           </div>
         </div>
 
-        <div className='mt-10 rounded-xl border border-border bg-card/40 p-6 text-center shadow-foreground/10 shadow-sm'>
-          <h2 className='text-2xl md:text-3xl font-semibold mb-3'>Ready to Build Something Great?</h2>
-          <p className='text-secondary max-w-2xl mx-auto mb-5'>
-            I am available for freelance work, product collaboration, and long-term development support.
+        <div className='mt-8 rounded-lg border border-subtle bg-base p-8 text-center'>
+          <h2 className='text-2xl font-semibold text-primary mb-3'>Ready to Build Something Significant?</h2>
+          <p className='text-sm text-secondary max-w-xl mx-auto mb-6 leading-relaxed'>
+            Available for full-stack engineering roles, contract development, and technical consulting.
           </p>
           <a href='/contact'>
             <button className='btn-outline'>Discuss Your Project</button>

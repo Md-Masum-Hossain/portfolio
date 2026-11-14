@@ -5,7 +5,7 @@ import { use } from "react";
 
 const IMAGE_RADIUS = 80;       
 const CIRCLE_GAP = 1;          
-const COLORS = ["#c60808", "#c60808", "#c60808"]; 
+const COLORS = ["var(--accent-primary)", "var(--accent-primary)", "var(--accent-primary)"]; 
 
 export default function MultiFullCircleFocus() {
   const circleRadii = [
@@ -66,7 +66,7 @@ export default function MultiFullCircleFocus() {
           height={400}
           width={400}
           src="/masum.png"
-          alt="center"
+          alt="Masum Hossain portrait"
           className="w-full h-full object-cover"
         />
       </motion.div>

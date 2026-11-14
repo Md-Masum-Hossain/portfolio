@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
 @theme {
+  --color-base: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-border-subtle: var(--border-subtle);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent: var(--accent-primary);
+  --color-accent-fg: var(--accent-primary-fg);
+  --color-status: var(--accent-status);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* --color-light-bg: var(--light-bg); */
   --color-card: var(--card);
   --color-border: var(--border);
-  --color-primary: var(--primary);
+  --color-primary-cta: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-muted-foreground: var(--muted-foreground);
   --font-sans: var(--font-geist-sans);
@@ -15,7 +23,6 @@
   --animate-meteor: meteor 5s linear infinite;
 
   @keyframes pulse-subtle {
-
     0%,
     100% {
       opacity: 1;
@@ -45,32 +52,101 @@
 
 @layer base {
   :root {
-    --background: #F6F7F9;
-    --foreground: #061025;
-    --card: #ffffff;
-    --border: rgba(11, 18, 32, 0.05);
-    --primary: hsl(195 52% 47%);
-    --primary-gradient: linear-gradient(135deg, hsl(195 54% 54%), hsl(235 28% 56%));
-    --primary-foreground: hsl(220 20% 5%);
-    --muted-foreground: #8a97a2;
-    --gradient-primary: linear-gradient(135deg, hsl(195 52% 47%), hsl(240 30% 56%));
-    --gradient-accent: linear-gradient(135deg, hsl(240 30% 56%), hsl(330 24% 54%));
-    --gradient-glow: linear-gradient(135deg, hsl(195 52% 47% / 0.10), hsl(240 30% 56% / 0.10));
+    --bg-base: #0C0C0E;
+    --bg-surface: #141417;
+    --border-subtle: #232329;
+    --text-primary: #F4F4F5;
+    --text-secondary: #94949E;
+    --accent-primary: #E5A93C;
+    --accent-primary-fg: #0C0C0E;
+    --accent-status: #34D399;
+
+    /* Theme bridges for existing components */
+    --background: var(--bg-base);
+    --foreground: var(--text-primary);
+    --card: var(--bg-surface);
+    --border: var(--border-subtle);
+    --primary: var(--accent-primary);
+    --primary-foreground: var(--accent-primary-fg);
+    --muted-foreground: var(--text-secondary);
+    --primary-gradient: linear-gradient(135deg, #F4F4F5, #E5A93C);
+    --gradient-primary: linear-gradient(135deg, #F4F4F5, #E5A93C);
+    --gradient-accent: linear-gradient(135deg, #E5A93C, #34D399);
+    --gradient-glow: linear-gradient(135deg, rgba(229, 169, 60, 0.15), rgba(52, 211, 153, 0.15));
   }
 
   .dark {
-    --background: #0b1118;
-    --foreground: #e6eef8;
-    --card: #0f1622;
-    --primary: hsl(195 55% 60%);
-    --primary-foreground: #e8f3ea;
-    --border: rgba(255, 255, 255, 0.04);
-    --muted-foreground: #8e9fb0;
-    --primary-gradient: linear-gradient(135deg, hsl(195 56% 62%), hsl(235 28% 60%));
-    --gradient-primary: linear-gradient(135deg, hsl(195 55% 60%), hsl(240 30% 56%));
-    --gradient-accent: linear-gradient(135deg, hsl(240 30% 56%), hsl(330 24% 54%));
-    --gradient-glow: linear-gradient(135deg, hsl(195 55% 60% / 0.10), hsl(240 30% 56% / 0.10));
+    --bg-base: #0C0C0E;
+    --bg-surface: #141417;
+    --border-subtle: #232329;
+    --text-primary: #F4F4F5;
+    --text-secondary: #94949E;
+    --accent-primary: #E5A93C;
+    --accent-primary-fg: #0C0C0E;
+    --accent-status: #34D399;
+
+    --background: var(--bg-base);
+    --foreground: var(--text-primary);
+    --card: var(--bg-surface);
+    --border: var(--border-subtle);
+    --primary: var(--accent-primary);
+    --primary-foreground: var(--accent-primary-fg);
+    --muted-foreground: var(--text-secondary);
+    --primary-gradient: linear-gradient(135deg, #F4F4F5, #E5A93C);
+    --gradient-primary: linear-gradient(135deg, #F4F4F5, #E5A93C);
+    --gradient-accent: linear-gradient(135deg, #E5A93C, #34D399);
+    --gradient-glow: linear-gradient(135deg, rgba(229, 169, 60, 0.15), rgba(52, 211, 153, 0.15));
   }
+}
+
+/* Explicit Semantic Utility Classes */
+@utility bg-base {
+  background-color: var(--bg-base);
+}
+
+@utility bg-surface {
+  background-color: var(--bg-surface);
+}
+
+@utility text-primary {
+  color: var(--text-primary);
+}
+
+@utility text-secondary {
+  color: var(--text-secondary);
+}
+
+@utility border-subtle {
+  border-color: var(--border-subtle);
+}
+
+@utility bg-accent {
+  background-color: var(--accent-primary);
+}
+
+@utility text-accent {
+  color: var(--accent-primary);
+}
+
+@utility text-status {
+  color: var(--accent-status);
+}
+
+@utility bg-status {
+  background-color: var(--accent-status);
+}
+
+@utility border-accent {
+  border-color: var(--accent-primary);
+}
+
+@utility hero-grid {
+  background-image: 
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 35%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 35%, #000 30%, transparent 100%);
 }
 
 @utility bg-gradient-primary {
@@ -85,27 +161,18 @@
 
 @utility star {
   @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4)
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
 @utility meteor {
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4)
-}
-
-@utility light-bg {
-  background: radial-gradient(circle at 15% 15%, #E0CFFF 0%, transparent 60%),
-    radial-gradient(circle at 85% 10%, #C7F6FF 0%, transparent 60%),
-    radial-gradient(circle at 50% 50%, #FFFFFF 0%, transparent 80%);
-  background-color: #F8F0FF;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -114,28 +181,28 @@ body {
 
 /* Typographic scale and vertical rhythm */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--foreground);
+  color: var(--text-primary);
   margin-top: 0;
   margin-bottom: 0.6rem;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   font-weight: 700;
 }
 
 h1 {
-  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
 }
 
 h2 {
-  font-size: clamp(1.25rem, 2.0vw, 1.75rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
 }
 
 h3 {
-  font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
   font-weight: 600;
 }
 
-h4 { font-size: 1rem; font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 600; }
 h5 { font-size: 0.95rem; font-weight: 600; }
 h6 { font-size: 0.9rem; font-weight: 600; }
 
@@ -144,141 +211,104 @@ p {
   margin-bottom: 1.125rem;
   font-size: 1rem;
   line-height: 1.65;
+  color: var(--text-secondary);
 }
 
 small, .label, label {
   font-size: 0.875rem;
-  color: var(--muted-foreground);
+  color: var(--text-secondary);
 }
 
-/* Links inherit color; underline only on hover for minimalism */
+/* Links inherit color */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-a:hover, a:focus {
-  text-decoration: underline;
-}
-
-/* Global vertical rhythm: small, non-invasive spacing between major blocks */
-main > * + * {
-  margin-top: clamp(1.25rem, 2.2vw, 2.5rem);
-}
-
-/* Ensure readable measure inside prose blocks */
-.prose h1, .prose h2, .prose h3 { margin-top: 0; }
-
-/* Tighten heading -> paragraph spacing slightly for a confident rhythm */
-h1 + p, h2 + p, h3 + p { margin-top: 0.25rem; }
-
+/* Clean Button System matching Master Blueprint */
 .btn-primary {
-    @apply px-6 py-3 rounded-xl font-semibold text-primary-foreground;
-    background: linear-gradient(135deg, hsl(187 100% 50%), hsl(263 70% 58%));
-    transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms ease, background-color 220ms ease;
-    will-change: transform, box-shadow;
-  }
+  @apply px-6 py-2.5 rounded-lg font-semibold cursor-pointer inline-flex items-center justify-center transition-all duration-200 text-sm md:text-base;
+  background-color: var(--accent-primary);
+  color: var(--accent-primary-fg);
+  border: 1px solid transparent;
+}
 
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    /* softer, subtle shadow — no neon glow */
-    box-shadow: 0 10px 30px rgba(2,6,23,0.12), 0 2px 6px rgba(2,6,23,0.06);
-  }
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(229, 169, 60, 0.25);
+  filter: brightness(1.05);
+}
 
-  .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-white/10 rounded-2xl;
-    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
-  }
-  .glass-card:hover {
-    box-shadow: 0 12px 48px hsl(0 0% 0% / 0.5);
-  }
-  .glass-card-hover {
-    @apply transition-all duration-300;
-  }
-  .glass-card-hover:hover {
-    @apply border-white/20 scale-[1.02];
-    box-shadow: 0 12px 40px hsl(187 100% 50% / 0.15);
-  }
+.btn-outline {
+  @apply px-6 py-2.5 rounded-lg font-semibold cursor-pointer inline-flex items-center justify-center transition-all duration-200 text-sm md:text-base;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
 
-  .btn-outline {
-    @apply px-6 py-3 rounded-xl font-semibold text-primary bg-transparent;
-    @apply transition;
-    /* reduce border dominance while keeping brand color intent */
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(11,18,32,0.08);
-    background-color: transparent;
-    transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
-  }
+.btn-outline:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background-color: rgba(229, 169, 60, 0.06);
+}
 
-  .dark .btn-outline {
-    /* lighter border in dark mode */
-    border-color: rgba(255,255,255,0.06);
-  }
+.glass-card {
+  @apply bg-surface backdrop-blur-xl border border-subtle rounded-lg;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
 
-  .btn-outline:hover {
-    transform: translateY(-2px);
-    /* subtle translucent fill using brand tint (keeps transparent look) */
-    background-color: rgba(32,138,199,0.06);
-    box-shadow: 0 8px 20px rgba(2,6,23,0.08);
-  }
+.glass-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
 
-   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(187 100% 50%), hsl(263 70% 58%));
-  }
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #F4F4F5 30%, #E5A93C 100%);
+}
 
-  .gradient-text-accent {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(263 70% 58%), hsl(330 80% 60%));
-  }
+.gradient-text-accent {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #E5A93C, #34D399);
+}
 
-  .neon-glow {
-    box-shadow: 0 0 20px hsl(187 100% 50% / 0.4), 0 0 40px hsl(187 100% 50% / 0.2);
-  }
+.neon-glow {
+  box-shadow: 0 0 20px rgba(229, 169, 60, 0.3);
+}
 
-  .neon-glow-purple {
-    box-shadow: 0 0 20px hsl(263 70% 58% / 0.4), 0 0 40px hsl(263 70% 58% / 0.2);
-  }
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(229, 169, 60, 0.2);
+}
 
-  /* Layout refinement: global container and readable measure
-     - Keeps hero/content/footer relationship balanced
-     - Wider but restrained max-widths for desktop
-     - Preserves readable line-lengths for long-form text
-  */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 1280px) {
   .container {
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: 1280px;
+    padding-left: 28px;
+    padding-right: 28px;
   }
+}
 
-  @media (min-width: 1280px) {
-    .container {
-      max-width: 1280px;
-      padding-left: 28px;
-      padding-right: 28px;
-    }
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
   }
+}
 
-  @media (min-width: 1600px) {
-    .container {
-      max-width: 1400px;
-    }
-  }
+.prose {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  /* Reading measure: keep long paragraphs comfortable */
-  .prose {
-    max-width: 65ch;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Slight spacing relationship tweak between header/content/footer
-     (non-invasive: only affects global flow if components rely on container)
-  */
-  main {
-    display: block;
-  }
+main {
+  display: block;
+}
