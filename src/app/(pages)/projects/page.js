@@ -1,15 +1,17 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import ProjectCard from '@/app/components/ProjectCard'
-import projectData from '@/app/utility/projectsData.json'
+import { getSortedProjects } from '@/app/utility/getSortedProjects'
 import { MotionWrapper } from '@/app/components/motion/MotionWrapper'
 import ProjectCategory from '@/app/components/ProjectCategory'
 import { Sparkles } from 'lucide-react'
 
+const sortedProjects = getSortedProjects();
+
 // Only display categories that actually have projects (hides empty categories like Backend)
 const activeCategories = [
   'All',
-  ...Array.from(new Set(projectData.map((project) => project.category))).filter(Boolean),
+  ...Array.from(new Set(sortedProjects.map((project) => project.category))).filter(Boolean),
 ];
 
 function ProjectsPage() {
@@ -17,8 +19,8 @@ function ProjectsPage() {
 
   const filteredProjects =
     selectedCategory === 'All'
-      ? projectData
-      : projectData.filter((project) => project.category === selectedCategory);
+      ? sortedProjects
+      : sortedProjects.filter((project) => project.category === selectedCategory);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);

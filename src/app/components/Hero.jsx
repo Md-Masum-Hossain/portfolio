@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import StaggeredItem from './motion/StaggeredItem';
 import HackerCircle from './HackerCircle';
+import siteConfig from '@/config/siteConfig';
 
 function Hero() {
   return (
@@ -31,7 +32,7 @@ function Hero() {
             </StaggeredItem>
             <StaggeredItem className='flex gap-4 mt-4' type={"left"} >
               <a
-                href="https://github.com/Md-Masum-Hossain"
+                href={siteConfig.links.github}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label="GitHub Profile"
@@ -40,7 +41,7 @@ function Hero() {
                 <FaGithubSquare className='w-7 h-7' />
               </a>
               <a
-                href="https://www.linkedin.com/in/mdmasumhossain5/"
+                href={siteConfig.links.linkedin}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label="LinkedIn Profile"
@@ -49,7 +50,7 @@ function Hero() {
                 <FaLinkedin className='w-7 h-7' />
               </a>
               <a
-                href="mailto:masumhossain1712@gmail.com"
+                href={siteConfig.links.email}
                 aria-label="Send Email"
                 className='text-secondary hover:text-accent transition-colors duration-200'
               >
@@ -84,7 +85,7 @@ function Hero() {
                       <ArrowRight className='w-4 h-4' />
                     </button>
                   </a>
-                  <a href="/Resume of Web Developer-Masum.pdf" download>
+                  <a href={siteConfig.resumeUrl} download>
                     <button className='btn-outline w-full sm:w-auto inline-flex items-center justify-center gap-2'>
                       <span>Download CV</span>
                       <MotionWrapper type='upDownPalse'>

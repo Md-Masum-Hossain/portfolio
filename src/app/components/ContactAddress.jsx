@@ -2,26 +2,27 @@ import React from 'react'
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import { MotionWrapper } from './motion/MotionWrapper';
+import siteConfig from '@/config/siteConfig';
 
 function ContactAddress() {
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'mdmasumhossain1712@gmail.com',
-      href: 'mailto:mdmasumhossain1712@gmail.com',
+      value: siteConfig.email,
+      href: siteConfig.links.email,
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+880 1772423200',
-      href: 'tel:+8801772423200',
+      value: siteConfig.phone,
+      href: `tel:${siteConfig.phone.replace(/[\s-]/g, '')}`,
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Dhaka, Bangladesh',
-      href: 'https://maps.google.com/?q=Dhaka,Bangladesh',
+      value: siteConfig.location,
+      href: siteConfig.locationUrl,
     },
   ];
 
@@ -29,25 +30,25 @@ function ContactAddress() {
     {
       name: 'GitHub',
       icon: FaGithub,
-      href: 'https://github.com/Md-Masum-Hossain',
+      href: siteConfig.links.github,
       ariaLabel: 'Visit GitHub profile',
     },
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      href: 'https://www.linkedin.com/in/mdmasumhossain5/',
+      href: siteConfig.links.linkedin,
       ariaLabel: 'Connect on LinkedIn',
     },
     {
       name: 'Email',
       icon: Mail,
-      href: 'mailto:mdmasumhossain1712@gmail.com',
+      href: siteConfig.links.email,
       ariaLabel: 'Send an email',
     },
     {
       name: 'Facebook',
       icon: FaFacebook,
-      href: 'https://www.facebook.com/mostafijur.rahman.241326',
+      href: siteConfig.links.facebook,
       ariaLabel: 'Facebook profile',
     },
   ];

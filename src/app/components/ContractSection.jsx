@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { ArrowRight, Mail, Sparkles } from 'lucide-react'
+import siteConfig from '@/config/siteConfig'
 
 function ContractSection() {
   return (
@@ -26,7 +27,7 @@ function ContractSection() {
               <ArrowRight className='w-4 h-4' />
             </button>
           </Link>
-          <a href='mailto:masumhossain1712@gmail.com'>
+          <a href={siteConfig.links.email}>
             <button className='btn-outline w-full sm:w-auto inline-flex items-center justify-center gap-2'>
               <Mail className='w-4 h-4 text-accent' />
               <span>Direct Email</span>

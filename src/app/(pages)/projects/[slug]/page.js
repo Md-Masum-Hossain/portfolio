@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, BadgeCheck, CheckCircle2, ExternalLink, FolderOpen, Github, Layers3, Sparkles, Tag, CircleDot } from 'lucide-react'
 import projectData from '@/app/utility/projectsData'
+import { getSortedProjects } from '@/app/utility/getSortedProjects'
 import { MotionWrapper } from '@/app/components/motion/MotionWrapper'
 
 const createSlug = (value = '') =>

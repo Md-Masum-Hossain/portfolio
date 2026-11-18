@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { MotionWrapper } from './motion/MotionWrapper';
-import projectData from '@/app/utility/projectsData.json';
+import { getSortedProjects } from '@/app/utility/getSortedProjects';
 
 const createSlug = (value = '') =>
   value
@@ -16,8 +16,9 @@ const createSlug = (value = '') =>
     .replace(/-+/g, '-');
 
 function ProjectSection() {
-  // Top 3 real projects: Dorpon, Docvexa, Routine Scrapper
-  const featuredProjects = projectData.slice(0, 3);
+  // Top 3 real projects sorted newest first
+  const sortedProjects = getSortedProjects();
+  const featuredProjects = sortedProjects.slice(0, 3);
 
   return (
     <section className="w-full border-t border-subtle py-24 bg-base relative">
@@ -75,13 +76,12 @@ function ProjectSection() {
                       </span>
                     </div>
 
-                    <div className="overflow-hidden rounded-md border border-subtle bg-base relative">
+                    <div className="relative w-full aspect-video overflow-hidden rounded-md border border-subtle bg-base">
                       <Image
                         src={project.src}
                         alt={project.titel}
-                        width={1200}
-                        height={750}
-                        className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                        fill
+                        className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                         priority={index === 0}
                       />
                     </div>

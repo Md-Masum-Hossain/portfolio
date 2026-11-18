@@ -30,12 +30,12 @@ function ProjectCard({
     <div className="rounded-lg border border-subtle bg-surface flex flex-col justify-between overflow-hidden shadow-xl transition-all duration-300 hover:border-accent/40 group h-full">
       {/* Top Image Preview Frame */}
       <div>
-        <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-subtle bg-base">
+        <div className="relative w-full aspect-video overflow-hidden border-b border-subtle bg-base">
           <Image
             src={src}
             alt={titel}
             fill
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
           />
           <div className="absolute top-3 left-3 flex items-center gap-2">
             <span className="px-2.5 py-1 rounded-md border border-subtle bg-base/90 backdrop-blur-md text-[11px] font-mono text-secondary uppercase tracking-wider">

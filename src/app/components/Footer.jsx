@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Github, Linkedin, Mail } from 'lucide-react'
+import siteConfig from '@/config/siteConfig'
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -57,7 +58,7 @@ function Footer() {
             </h4>
             <div className='flex items-center gap-3'>
               <a
-                href='https://github.com/Md-Masum-Hossain'
+                href={siteConfig.links.github}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='GitHub Profile'
@@ -66,7 +67,7 @@ function Footer() {
                 <Github className='w-4 h-4' />
               </a>
               <a
-                href='https://www.linkedin.com/in/mdmasumhossain5/'
+                href={siteConfig.links.linkedin}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='LinkedIn Profile'
@@ -75,7 +76,7 @@ function Footer() {
                 <Linkedin className='w-4 h-4' />
               </a>
               <a
-                href='mailto:masumhossain1712@gmail.com'
+                href={siteConfig.links.email}
                 aria-label='Send Email'
                 className='p-2.5 rounded-lg border border-subtle bg-surface text-secondary hover:text-primary hover:border-accent/40 transition-all duration-200'
               >
