@@ -81,7 +81,7 @@ function ProjectSection() {
                         src={project.src}
                         alt={project.titel}
                         fill
-                        className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                        className="object-contain bg-black/40 transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                         priority={index === 0}
                       />
                     </div>

@@ -1,68 +1,6 @@
 [
   {
     "id": 1,
-    "titel": "Dorpon E-commerce Store",
-    "desc": "Dorpon is a full-stack e-commerce platform that delivers a smooth shopping experience with product discovery, streamlined checkout, and reliable order management for both users and administrators.",
-    "src": "/projectImages/dorpon.png",
-    "category": "Full Stack",
-    "tags": [
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Tailwind CSS"
-    ],
-    "frontend": "https://github.com/Md-Masum-Hossain/dorponFrontend.git",
-    "backend": "https://github.com/Md-Masum-Hossain/dorponBackend.git",
-    "liveView": "https://dorpon-frontend.vercel.app/",
-    "status": "Completed",
-    "storyHeadline": "Shopping made straightforward and reliable",
-    "storySubheadline": "A full-stack platform designed for both customers and store managers to keep commerce clear and operations manageable without unnecessary complexity.",
-    "overview": "Dorpon is a production-focused e-commerce platform designed to keep the shopping journey predictable for customers and manageable for administrators. It centers on clean product discovery, reliable checkout behavior, and a backend structure that can grow with new catalog or workflow requirements. The project was shaped around practical store operations rather than visual complexity, with attention to maintainable code boundaries, responsive shopping flows, and enough flexibility to support future expansion without reworking the core experience.",
-    "storyGallery": [
-      {
-        "src": "#",
-        "alt": "Screenshot 1"
-      },
-      {
-        "src": "#",
-        "alt": "Screenshot 2"
-      }
-    ],
-    "keyFeatures": [
-      {
-        "title": "Product browsing",
-        "description": "Customers can move through a streamlined discovery flow that keeps the catalog easy to scan and the shopping path clear."
-      },
-      {
-        "title": "Reliable checkout flow",
-        "description": "Cart and order handling are structured to reduce inconsistencies and keep checkout behavior predictable from start to finish."
-      },
-      {
-        "title": "Separated frontend and backend",
-        "description": "The application uses distinct codebases for presentation and business logic, which makes maintenance and future scaling simpler."
-      },
-      {
-        "title": "Responsive shopping experience",
-        "description": "The interface is optimized for mobile and desktop use so customers can browse and purchase with the same clarity on any device."
-      }
-    ],
-    "challenges": [
-      {
-        "title": "Keeping cart and checkout state consistent",
-        "solution": "Structured the cart flow around predictable state updates and backend validation so the checkout process stays aligned with selected items and quantities."
-      },
-      {
-        "title": "Balancing user experience with admin control",
-        "solution": "Separated customer-facing interactions from administrative workflows so product management and order handling remain easier to scale and maintain."
-      }
-    ],
-    "liveLink": "https://dorpon-frontend.vercel.app/",
-    "githubLink": "https://github.com/Md-Masum-Hossain/dorponFrontend.git",
-    "createdAt": "2026-04-10T12:00:00.000Z"
-  },
-  {
-    "id": 2,
     "titel": "Docvexa",
     "desc": "A SaaS-based healthcare platform that helps patients book doctor appointments, make secure online payments, and receive AI-powered health guidance. Doctors and administrators can efficiently manage appointments, earnings, and platform operations.",
     "src": "/projectImages/docvexa.png",
@@ -130,7 +68,69 @@
     ],
     "liveLink": "https://docvexa.vercel.app/",
     "githubLink": "https://github.com/Md-Masum-Hossain/Doctor-Appointment-SaaS.git",
-    "createdAt": "2026-03-15T12:00:00.000Z"
+    "createdAt": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "titel": "Dorpon E-commerce Store",
+    "desc": "Dorpon is a full-stack e-commerce platform that delivers a smooth shopping experience with product discovery, streamlined checkout, and reliable order management for both users and administrators.",
+    "src": "/projectImages/dorpon.png",
+    "category": "Full Stack",
+    "tags": [
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS"
+    ],
+    "frontend": "https://github.com/Md-Masum-Hossain/dorponFrontend.git",
+    "backend": "https://github.com/Md-Masum-Hossain/dorponBackend.git",
+    "liveView": "https://dorpon-frontend.vercel.app/",
+    "status": "Completed",
+    "storyHeadline": "Shopping made straightforward and reliable",
+    "storySubheadline": "A full-stack platform designed for both customers and store managers to keep commerce clear and operations manageable without unnecessary complexity.",
+    "overview": "Dorpon is a production-focused e-commerce platform designed to keep the shopping journey predictable for customers and manageable for administrators. It centers on clean product discovery, reliable checkout behavior, and a backend structure that can grow with new catalog or workflow requirements. The project was shaped around practical store operations rather than visual complexity, with attention to maintainable code boundaries, responsive shopping flows, and enough flexibility to support future expansion without reworking the core experience.",
+    "storyGallery": [
+      {
+        "src": "#",
+        "alt": "Screenshot 1"
+      },
+      {
+        "src": "#",
+        "alt": "Screenshot 2"
+      }
+    ],
+    "keyFeatures": [
+      {
+        "title": "Product browsing",
+        "description": "Customers can move through a streamlined discovery flow that keeps the catalog easy to scan and the shopping path clear."
+      },
+      {
+        "title": "Reliable checkout flow",
+        "description": "Cart and order handling are structured to reduce inconsistencies and keep checkout behavior predictable from start to finish."
+      },
+      {
+        "title": "Separated frontend and backend",
+        "description": "The application uses distinct codebases for presentation and business logic, which makes maintenance and future scaling simpler."
+      },
+      {
+        "title": "Responsive shopping experience",
+        "description": "The interface is optimized for mobile and desktop use so customers can browse and purchase with the same clarity on any device."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Keeping cart and checkout state consistent",
+        "solution": "Structured the cart flow around predictable state updates and backend validation so the checkout process stays aligned with selected items and quantities."
+      },
+      {
+        "title": "Balancing user experience with admin control",
+        "solution": "Separated customer-facing interactions from administrative workflows so product management and order handling remain easier to scale and maintain."
+      }
+    ],
+    "liveLink": "https://dorpon-frontend.vercel.app/",
+    "githubLink": "https://github.com/Md-Masum-Hossain/dorponFrontend.git",
+    "createdAt": "2026-04-10T12:00:00.000Z"
   },
   {
     "id": 3,
@@ -197,26 +197,22 @@
   {
     "id": 4,
     "titel": "Product Hunt",
-    "desc": "Product Hunt is a community-driven platform for discovering and launching tech products, featuring secure authentication, product publishing workflows, voting and review systems, and analytics for administrative insights.",
+    "desc": "A responsive tech product discovery platform featuring interactive product showcases, community voting workflows, fluid motion transitions, and dynamic analytical dashboards built with Chart.js.",
     "src": "/projectImages/producthunt.png",
-    "category": "Full Stack",
+    "category": "Frontend",
     "tags": [
       "React",
       "Tailwind CSS",
       "Framer Motion",
-      "Chart.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT"
+      "Chart.js"
     ],
     "frontend": "https://github.com/Md-Masum-Hossain/product-hunt-client.git",
-    "backend": "https://github.com/Md-Masum-Hossain/product-hunt-server.git",
+    "backend": "#",
     "liveView": "https://product-hunt-client-blue.vercel.app/",
     "status": "Completed",
     "storyHeadline": "Discover and launch tech together",
     "storySubheadline": "A community platform where product creators publish their work, receive feedback, and everyone can find and vote on innovations they care about.",
-    "overview": "Product Hunt is a community platform for showcasing new products, collecting feedback, and supporting launch workflows. It is designed to handle authenticated publishing, engagement activity, and administrative visibility without making the interface feel crowded. The implementation focuses on keeping product discovery readable, preserving a lightweight interaction model, and organizing the data flow so the platform can support growth without losing clarity for contributors, voters, or administrators.",
+    "overview": "Product Hunt is a frontend showcase application engineered with React, Tailwind CSS, Framer Motion, and Chart.js to deliver a fast, interactive product discovery experience. The architecture emphasizes high-performance client-side rendering, smooth micro-interactions, responsive voting interfaces, and clean analytical charts that present product metrics without visual clutter.",
     "storyGallery": [
       {
         "src": "#",
@@ -229,30 +225,30 @@
     ],
     "keyFeatures": [
       {
-        "title": "Secure publishing",
-        "description": "Authenticated routes protect product submissions and keep contributor actions tied to verified user sessions."
+        "title": "Dynamic product discovery",
+        "description": "Interactive layout allows users to browse, filter, and inspect newly launched tech products with instant UI feedback."
       },
       {
-        "title": "Voting and reviews",
-        "description": "Community feedback is collected through structured voting and review interactions that keep product visibility meaningful."
+        "title": "Fluid voting & animations",
+        "description": "Crafted with Framer Motion to provide tactile micro-interactions and smooth state transitions during voting and browsing."
       },
       {
-        "title": "Admin visibility",
-        "description": "Analytics-oriented views give administrators enough context to monitor usage and manage the platform responsibly."
+        "title": "Interactive analytical charts",
+        "description": "Visualizes community engagement, vote distributions, and daily activity trends using responsive Chart.js components."
       },
       {
-        "title": "Engaging interface",
-        "description": "Motion is used lightly to keep discovery dynamic without making the browsing experience feel busy."
+        "title": "Responsive modular layout",
+        "description": "Built with Tailwind CSS to ensure crisp typography and flawless adaptability across mobile, tablet, and desktop viewports."
       }
     ],
     "challenges": [
       {
-        "title": "Protecting user actions while keeping posting simple",
-        "solution": "Used authenticated routes and backend checks so creators can publish safely without adding unnecessary friction to the submission flow."
+        "title": "Optimizing animation performance across dense feeds",
+        "solution": "Fine-tuned Framer Motion variants and utilized lightweight layout animations to prevent frame drops during rapid scrolling."
       },
       {
-        "title": "Presenting dense product data without clutter",
-        "solution": "Used a modular UI and structured content hierarchy so product cards, discussions, and analytics remain readable across screen sizes."
+        "title": "Visualizing complex engagement data cleanly",
+        "solution": "Configured custom Chart.js themes matching the dark carbon design system to keep data visualizations legible and aesthetic."
       }
     ],
     "liveLink": "https://product-hunt-client-blue.vercel.app/",
@@ -324,21 +320,24 @@
   {
     "id": 6,
     "titel": "StudyNook",
-    "desc": "A study management application that helps students organize their learning materials, track progress, and collaborate with peers through a user-friendly interface.",
+    "desc": "A full-stack collaborative study platform featuring user authentication, real-time study room booking, structured learning material management, and scalable RESTful API integration.",
     "src": "/projectImages/studynook.png",
-    "category": "Frontend",
+    "category": "Full Stack",
     "tags": [
       "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
       "Tailwind CSS",
       "OpenWeatherMap API"
     ],
-    "frontend": "https://github.com/Md-Masum-Hossain/weather-app.git",
-    "backend": "#",
-    "liveView": "https://md-masum-hossain.github.io/weather-app/",
+    "frontend": "https://github.com/Md-Masum-Hossain/StudyNook-Client",
+    "backend": "https://github.com/Md-Masum-Hossain/StudyNook-Server",
+    "liveView": "https://study-nook-client-navy.vercel.app/",
     "status": "Completed",
-    "storyHeadline": "Study organization without extra burden",
-    "storySubheadline": "A student-focused app that organizes learning materials, tracks progress, and supports peer collaboration designed for regular academic use.",
-    "overview": "StudyNook is a study management application built to help students stay organized without turning the experience into another administrative burden. The app focuses on clarity, quick access to learning materials, and a structure that supports regular use. It was designed for practical student routines, so the interface keeps the most common tasks close at hand while still leaving room for future features that could improve collaboration and planning without making the product harder to use.",
+    "storyHeadline": "Collaborative study spaces and learning management",
+    "storySubheadline": "A full-stack platform providing students with secure authentication, real-time room reservations, and centralized learning resources.",
+    "overview": "StudyNook is a full-stack study management platform developed with React, Node.js, Express, and MongoDB to streamline academic productivity and peer collaboration. It integrates secure user authentication with role-based access, interactive study room booking with status management, and organized repository modules for study materials. Powered by a robust RESTful API architecture, StudyNook ensures responsive real-time data flow and predictable schedule coordination for active student communities.",
     "storyGallery": [
       {
         "src": "#",
@@ -351,34 +350,34 @@
     ],
     "keyFeatures": [
       {
-        "title": "Study organization",
-        "description": "Learning materials are grouped in a way that makes it easier to keep academic work organized."
+        "title": "Secure authentication & user profiles",
+        "description": "JWT-based authentication ensures student accounts, personal schedules, and study room reservations remain protected."
       },
       {
-        "title": "Progress tracking",
-        "description": "Students can review their progress over time without adding extra complexity to the workflow."
+        "title": "Real-time study room booking",
+        "description": "Interactive reservation workflow lets students book and manage study spaces with real-time availability updates."
       },
       {
-        "title": "Collaboration support",
-        "description": "The experience is shaped to make peer interaction and shared study work feel more natural."
+        "title": "Learning material management",
+        "description": "Centralized modules allow students to organize, upload, and share course documents and study guides seamlessly."
       },
       {
-        "title": "Daily-use interface",
-        "description": "The layout stays simple enough for frequent use, which is important for students checking tasks often."
+        "title": "RESTful API integration",
+        "description": "Modular backend endpoints handle user sessions, booking transactions, and resource queries with reliable validation."
       }
     ],
     "challenges": [
       {
-        "title": "Keeping the app useful for repeated daily use",
-        "solution": "Structured the interface around common student tasks so users can return to the same flows without relearning the app."
+        "title": "Synchronizing room booking availability",
+        "solution": "Built backend reservation checks with database transactions to prevent double booking and ensure room statuses reflect immediately."
       },
       {
-        "title": "Maintaining a balance between utility and simplicity",
-        "solution": "Prioritized the most important study actions first and kept secondary details out of the main path."
+        "title": "Structuring responsive data access for study materials",
+        "solution": "Implemented indexed MongoDB queries and modular REST controllers to deliver fast document search and retrieval across categories."
       }
     ],
-    "liveLink": "https://md-masum-hossain.github.io/weather-app/",
-    "githubLink": "https://github.com/Md-Masum-Hossain/weather-app.git",
+    "liveLink": "https://study-nook-client-navy.vercel.app/",
+    "githubLink": "https://github.com/Md-Masum-Hossain/StudyNook-Client",
     "createdAt": "2025-09-01T12:00:00.000Z"
   }
 ]
